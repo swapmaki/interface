@@ -1,0 +1,174 @@
+{
+  "name": "Solarbeam List",
+  "timestamp": "2021-07-15T12:15:29.993Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://raw.githubusercontent.com/sushiswap/art/master/sushi/logo-256x256.png",
+  "keywords": ["sushiswap", "default"],
+  "tokens": [
+    {
+      "name": "Solarbeam Token",
+      "address": "0x6bD193Ee6D2104F14F94E2cA6efefae561A4334B",
+      "symbol": "SOLAR",
+      "decimals": 18,
+      "chainId": 1285,
+      "logoURI": "/images/tokens/eth.png"
+    },
+    {
+      "name": "Wrapped MOVR",
+      "address": "0x98878B06940aE243284CA214f92Bb71a2b032B8A",
+      "symbol": "WMOVR",
+      "decimals": 18,
+      "chainId": 1285,
+      "logoURI": "/images/tokens/eth.png"
+    },
+    {
+      "name": "Wrapped GLMR",
+      "address": "0xFE99FcE8c433D6cEdDAd43A13B2df02093F8914C",
+      "symbol": "WGLMR",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x9f6Bb7Db6CF4C513B7DA54AE949a6f25A6187C07.png"
+    },
+    {
+      "name": "Multichain BUSD ",
+      "address": "0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F",
+      "symbol": "BUSD",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F.png"
+    },
+    {
+      "name": "Multichain USDC",
+      "address": "0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b",
+      "symbol": "USDC",
+      "decimals": 6,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b.png"
+    },
+    {
+      "name": "Multichain Tether",
+      "address": "0xeFAeeE334F0Fd1712f9a8cc375f427D9Cdd40d73",
+      "symbol": "USDT",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0xeFAeeE334F0Fd1712f9a8cc375f427D9Cdd40d73.png"
+    },
+    {
+      "name": "Multichain BNB",
+      "address": "0xc9BAA8cfdDe8E328787E29b4B078abf2DaDc2055",
+      "symbol": "BNB",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c.png"
+    },
+    {
+      "name": "Nomad USDC",
+      "address": "0x8f552a71EFE5eeFc207Bf75485b356A0b3f01eC9",
+      "symbol": "USDC",
+      "decimals": 6,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x8f552a71EFE5eeFc207Bf75485b356A0b3f01eC9.png"
+    },
+    {
+      "name": "Beamswap Token",
+      "address": "0xcd3B51D98478D53F4515A306bE565c6EebeF1D58",
+      "symbol": "GLINT",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0xcd3B51D98478D53F4515A306bE565c6EebeF1D58.png"
+    },
+    {
+      "name": "StellaSwap Token",
+      "address": "0x0E358838ce72d5e61E0018a2ffaC4bEC5F4c88d2",
+      "symbol": "STELLA",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x0E358838ce72d5e61E0018a2ffaC4bEC5F4c88d2.png"
+    },
+    {
+      "name": "Multichain Dai",
+      "address": "0x765277EebeCA2e31912C9946eAe1021199B39C61",
+      "symbol": "DAI",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x765277EebeCA2e31912C9946eAe1021199B39C61.png"
+    },
+    {
+      "name": "Flare Token",
+      "address": "0xE3e43888fa7803cDC7BEA478aB327cF1A0dc11a7",
+      "symbol": "FLARE",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0xE3e43888fa7803cDC7BEA478aB327cF1A0dc11a7.png"
+    },
+    {
+      "name": "Avalanche",
+      "address": "0x4792C1EcB969B036eb51330c63bD27899A13D84e",
+      "symbol": "AVAX",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x4792C1EcB969B036eb51330c63bD27899A13D84e.png"
+    },
+    {
+      "name": "Multichain Ethereum",
+      "address": "0xfA9343C3897324496A05fC75abeD6bAC29f8A40f",
+      "symbol": "ETH",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f.png"
+    },
+    {
+      "name": "Zenlink Token",
+      "address": "0x3Fd9b6C9A24E09F67b7b706d72864aEbb439100C",
+      "symbol": "ZLK",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x3Fd9b6C9A24E09F67b7b706d72864aEbb439100C.png"
+    },
+    {
+      "name": "Multichain WBTC",
+      "address": "0x922D641a426DcFFaeF11680e5358F34d97d112E1",
+      "symbol": "WBTC",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x922D641a426DcFFaeF11680e5358F34d97d112E1.png"
+    },
+    {
+      "name": "Stellaswap Galaxy",
+      "address": "0xBd174C9d2A564b2eB187BD6556ae1d12256D5adD",
+      "symbol": "GLX",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0xBd174C9d2A564b2eB187BD6556ae1d12256D5adD.png"
+    },
+    {
+      "name": "Moonriver",
+      "address": "0x1d4C2a246311bB9f827F4C768e277FF5787B7D7E",
+      "symbol": "MOVR",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x1d4C2a246311bB9f827F4C768e277FF5787B7D7E.png"
+    },
+    {
+      "name": "Thorus",
+      "address": "0x735aBE48e8782948a37C7765ECb76b98CdE97B0F",
+      "symbol": "THO",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x735aBE48e8782948a37C7765ECb76b98CdE97B0F.png"
+    },
+    {
+      "name": "LUNAR Token",
+      "address": "0x28c3971794d95637218AA87159125b070Ce69664",
+      "symbol": "LUNAR",
+      "decimals": 18,
+      "chainId": 1284,
+      "logoURI": "https://raw.githubusercontent.com/swapmaki/logo/main/0x28c3971794d95637218AA87159125b070Ce69664.png"
+    }
+  ]
+}

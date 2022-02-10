@@ -1,22 +1,21 @@
-import React, { useMemo } from 'react'
-import { fortmatic, injected, portis, walletconnect, walletlink } from '../../connectors'
-import { isTransactionRecent, useAllTransactions } from '../../state/transactions/hooks'
-
-import { AbstractConnector } from '@web3-react/abstract-connector'
-import Image from 'next/image'
-import Loader from '../Loader'
-import { BridgeContextName, NetworkContextName } from '../../constants'
-import { TransactionDetails } from '../../state/transactions/reducer'
-import WalletModal from '../../modals/WalletModal'
-import Web3Connect from '../Web3Connect'
-import { shortenAddress } from '../../functions/format'
-import styled from 'styled-components'
 import { t } from '@lingui/macro'
-import useENSName from '../../hooks/useENSName'
 import { useLingui } from '@lingui/react'
-import { useWalletModalToggle } from '../../state/application/hooks'
+import { AbstractConnector } from '@web3-react/abstract-connector'
 import { useWeb3React } from '@web3-react/core'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
+import React, { useMemo } from 'react'
+import styled from 'styled-components'
+import { fortmatic, injected, portis, walletconnect, walletlink } from '../../connectors'
+import { BridgeContextName, NetworkContextName } from '../../constants'
+import { shortenAddress } from '../../functions/format'
+import useENSName from '../../hooks/useENSName'
+import WalletModal from '../../modals/WalletModal'
+import { useWalletModalToggle } from '../../state/application/hooks'
+import { isTransactionRecent, useAllTransactions } from '../../state/transactions/hooks'
+import { TransactionDetails } from '../../state/transactions/reducer'
+import Loader from '../Loader'
+import Web3Connect from '../Web3Connect'
 
 const IconWrapper = styled.div<{ size?: number }>`
   display: flex;
@@ -141,7 +140,12 @@ function Web3StatusInner() {
         </div>
       )
     } else {
-      return <Web3Connect style={{ paddingTop: '6px', paddingBottom: '6px' }} />
+      return (
+        <Web3Connect
+          style={{ paddingTop: '6px', paddingBottom: '6px' }}
+          className="!bg-dark-900 bg-gradient-to-r from-pink/80 hover:from-pink to-purple/80 hover:to-purple text-white h-[38px]"
+        />
+      )
     }
   }
 }

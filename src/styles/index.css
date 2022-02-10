@@ -191,3 +191,6 @@ transform: translateZ(0);
 /* .grecaptcha-badge {
   display: none !important;
 } */
+.text-bold {
+  font-weight: 700;
+}

@@ -143,7 +143,7 @@ function Web3StatusInner() {
       return (
         <Web3Connect
           style={{ paddingTop: '6px', paddingBottom: '6px' }}
-          className="!bg-dark-900 bg-gradient-to-r from-pink/80 hover:from-pink to-purple/80 hover:to-purple text-white h-[38px]"
+          className="!bg-dark-900 bg-gradient-to-r from-pink/80 hover:from-pink to-purple/80 hover:to-purple text-white h-[38px] text-bold border-2 border-dark-800 hover:border-dark-700"
         />
       )
     }

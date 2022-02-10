@@ -1,11 +1,41 @@
-import { ApprovalState, useApproveCallbackFromTrade } from '../../../hooks/useApproveCallback'
-import { BottomGrouping, SwapCallbackError } from '../../../features/swap/styleds'
-import { AutoRow, RowBetween } from '../../../components/Row'
-import { ButtonConfirmed, ButtonError } from '../../../components/Button'
-import { Currency, CurrencyAmount, JSBI, Token, TradeType, Trade as V2Trade } from '../../../sdk'
-import Column, { AutoColumn } from '../../../components/Column'
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import Lottie from 'lottie-react'
+import Head from 'next/head'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import ReactGA from 'react-ga'
+import swapArrowsAnimationData from '../../../animation/swap-arrows.json'
+import AddressInputPanel from '../../../components/AddressInputPanel'
+import Button, { ButtonConfirmed, ButtonError } from '../../../components/Button'
+import Column, { AutoColumn } from '../../../components/Column'
+import CurrencyInputPanel from '../../../components/CurrencyInputPanel'
+import DoubleGlowShadow from '../../../components/DoubleGlowShadow'
+import SwapHeader from '../../../components/ExchangeHeader'
+import Loader from '../../../components/Loader'
+import ProgressSteps from '../../../components/ProgressSteps'
+import { AutoRow, RowBetween } from '../../../components/Row'
+import SolarbeamLogo from '../../../components/SolarbeamLogo'
+import Web3Connect from '../../../components/Web3Connect'
+import confirmPriceImpactWithoutFee from '../../../features/swap/confirmPriceImpactWithoutFee'
+import ConfirmSwapModal from '../../../features/swap/ConfirmSwapModal'
+import { BottomGrouping, SwapCallbackError } from '../../../features/swap/styleds'
+import TradePrice from '../../../features/swap/TradePrice'
+import UnsupportedCurrencyFooter from '../../../features/swap/UnsupportedCurrencyFooter'
+import { maxAmountSpend } from '../../../functions/currency'
+import { warningSeverity } from '../../../functions/prices'
+import { computeFiatValuePriceImpact } from '../../../functions/trade'
 import { useAllTokens, useCurrency } from '../../../hooks/Tokens'
+import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { ApprovalState, useApproveCallbackFromTrade } from '../../../hooks/useApproveCallback'
+import useENSAddress from '../../../hooks/useENSAddress'
+import useIsArgentWallet from '../../../hooks/useIsArgentWallet'
+import { useIsSwapUnsupported } from '../../../hooks/useIsSwapUnsupported'
+import { useSwapCallback } from '../../../hooks/useSwapCallback'
+import { useUSDCValue } from '../../../hooks/useUSDCPrice'
+import useWrapCallback, { WrapType } from '../../../hooks/useWrapCallback'
+import TokenWarningModal from '../../../modals/TokenWarningModal'
+import { Currency, CurrencyAmount, JSBI, Token, Trade as V2Trade, TradeType } from '../../../sdk'
+import { Field } from '../../../state/swap/actions'
 import {
   useDefaultsFromURLSearch,
   useDerivedSwapInfo,
@@ -13,41 +43,6 @@ import {
   useSwapState,
 } from '../../../state/swap/hooks'
 import { useExpertModeManager, useUserSingleHopOnly, useUserTransactionTTL } from '../../../state/user/hooks'
-import useWrapCallback, { WrapType } from '../../../hooks/useWrapCallback'
-
-import AddressInputPanel from '../../../components/AddressInputPanel'
-import Button from '../../../components/Button'
-import ConfirmSwapModal from '../../../features/swap/ConfirmSwapModal'
-import CurrencyInputPanel from '../../../components/CurrencyInputPanel'
-import { Field } from '../../../state/swap/actions'
-import Head from 'next/head'
-import Loader from '../../../components/Loader'
-import Lottie from 'lottie-react'
-import ProgressSteps from '../../../components/ProgressSteps'
-import ReactGA from 'react-ga'
-import SwapHeader from '../../../components/ExchangeHeader'
-import TokenWarningModal from '../../../modals/TokenWarningModal'
-import TradePrice from '../../../features/swap/TradePrice'
-import UnsupportedCurrencyFooter from '../../../features/swap/UnsupportedCurrencyFooter'
-import Web3Connect from '../../../components/Web3Connect'
-import { computeFiatValuePriceImpact } from '../../../functions/trade'
-import confirmPriceImpactWithoutFee from '../../../features/swap/confirmPriceImpactWithoutFee'
-import { maxAmountSpend } from '../../../functions/currency'
-import swapArrowsAnimationData from '../../../animation/swap-arrows.json'
-import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
-import useENSAddress from '../../../hooks/useENSAddress'
-import useIsArgentWallet from '../../../hooks/useIsArgentWallet'
-import { useIsSwapUnsupported } from '../../../hooks/useIsSwapUnsupported'
-import { useRouter } from 'next/router'
-import { useSwapCallback } from '../../../hooks/useSwapCallback'
-import { useUSDCValue } from '../../../hooks/useUSDCPrice'
-import { warningSeverity } from '../../../functions/prices'
-import DoubleGlowShadow from '../../../components/DoubleGlowShadow'
-import Image from 'next/image'
-import SolarbeamLogo from '../../../components/SolarbeamLogo'
-import Alert from '../../../components/Alert'
 
 export default function Swap() {
   const { i18n } = useLingui()
@@ -500,7 +495,7 @@ export default function Swap() {
                 {i18n._(t`Unsupported Asset`)}
               </Button>
             ) : !account ? (
-              <Web3Connect size="lg" color="gradient" className="w-full" />
+              <Web3Connect size="lg" color="blue" className="w-full text-white text-bold bg-opacity-100" />
             ) : showWrap ? (
               <Button
                 color="gradient"

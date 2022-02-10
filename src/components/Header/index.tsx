@@ -1,17 +1,16 @@
-import { ChainId } from '../../sdk'
-import React from 'react'
-
+import { Popover } from '@headlessui/react'
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import More from './More'
-import NavLink from '../NavLink'
-import { Popover } from '@headlessui/react'
-import Web3Status from '../Web3Status'
-import { t } from '@lingui/macro'
+import React from 'react'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
-import { useLingui } from '@lingui/react'
-import TokenStats from '../TokenStats'
+import { ChainId } from '../../sdk'
 import LanguageSwitch from '../LanguageSwitch'
+import NavLink from '../NavLink'
+import TokenStats from '../TokenStats'
+import Web3Status from '../Web3Status'
+import More from './More'
 
 function AppBar(): JSX.Element {
   const { i18n } = useLingui()
@@ -19,7 +18,10 @@ function AppBar(): JSX.Element {
 
   return (
     <header className="flex-shrink-0 w-full">
-      <Popover as="nav" className="z-10 w-full bg-transparent">
+      <Popover
+        as="nav"
+        className="backdrop-blur-fallback w-full before:backdrop-blur-[20px] before:z-[-1] before:absolute before:w-full before:h-full border-b border-dark-800"
+      >
         {({ open }) => (
           <>
             <div className="px-4 py-4">
